@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="prac3css.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Space+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nixie+One&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.4.1/dist/chart.min.js" charset="utf-8"></script>
 </head>
 
 <body>
     <header class="header">
-        <video src="vecteezy_3d-animation-of-the-coronavirus-with-two-of-them_2019719.mp4" id="video-bg" autoplay muted loop></video>
+
         <nav class="navbar">
             <a href="#" class="nav-logo">Vaccination<span><i class="fas fa-syringe"></i></span></a>
             <ul class="nav-menu">
@@ -48,58 +48,49 @@
     <section class="datainbox">
         <a href="#graphs1">
             <div class="box" id="box-1">
-                <span>Total Cases: </span><span id="totalC"></span>
+                <span>Total Cases :&nbsp; </span><span id="totalC"></span>
             </div>
         </a>
         <a href="#graphs2">
             <div class="box" id="box-2">
-                <span>Total Recovered Cases: </span><span id="totalR"></span>
+                <span>Total Recovered Cases :&nbsp; </span><span id="totalR"></span>
             </div>
         </a>
-        <a href="#graphs2">
+        <a href="#graphs3">
             <div class="box" id="box-3">
-                <span>Total Decieced: </span><span id="totalD"></span>
+                <span>Total Deceased :&nbsp; </span><span id="totalD"></span>
             </div>
         </a>
     </section>
     <section id="graphs1" class="g1">
-        <button id="totalcasegraph" onclick="changetotalgraph()">Total Cases</button>
-        <button id="last30daysgraph" onclick="change30graph()">Last 30 Days</button>
-        <canvas id="myChart" height="110"></canvas>
-        <canvas id="Last30Days" height="110"></canvas>
+        <button onclick="changetotalgraph()">Total Cases</button>
+        <button onclick="change30graph()">Last 30 Days</button>
+        <canvas id="myChart" height="100"></canvas>
+        <canvas id="Last30Days" height="100"></canvas>
     </section>
-    <!-- <section id="graphs2" class="g1">
-        <button id="totalcasegraph" onclick="changetotalgraph()">Total Cases</button>
-        <button id="last30daysgraph" onclick="change30graph()">Last 30 Days</button>
-        <canvas id="myChartrecovered" height="110"></canvas>
-        <canvas id="Last30Daysrecovored" height="110"></canvas>
+    <section id="graphs2" class="g1">
+        <button onclick="changetotalgraphrecovered()">Total Cases</button>
+        <button onclick="change30graphrecovered()">Last 30 Days</button>
+        <canvas id="myChartrecovered" height="100"></canvas>
+        <canvas id="Last30Daysrecovored" height="100"></canvas>
     </section>
     <section id="graphs3" class="g1">
-        <button id="totalcasegraphrecoved" onclick="changetotalgraph()">Total Cases</button>
-        <button id="last30daysgraphrecoved" onclick="change30graph()">Last 30 Days</button>
-        <canvas id="myChartrecoved" height="110"></canvas>
-        <canvas id="Last30Daysrecoved" height="110"></canvas>
-    </section> -->
+        <button onclick="changetotalgraphdeceased()">Total Cases</button>
+        <button onclick="change30graphdeceased()">Last 30 Days</button>
+        <canvas id="myChartdeceased" height="100"></canvas>
+        <canvas id="Last30Daysdeceased" height="100"></canvas>
+    </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     <script src="prac3.js"></script>
 
