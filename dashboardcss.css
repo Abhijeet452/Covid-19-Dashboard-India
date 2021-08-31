@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    text-transform: capitalize;
+    font-family: 'Julius Sans One', sans-serif;
+    /* font-family: 'Space Mono', monospace; */
+}
+
+body {
+    color: #ffffff;
+}
+
+html {
+    font-size: 78.5%;
+}
+
+#video-bg {
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+    filter: brightness(20%);
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    /* color */
+}
+
+.header {
+    border-bottom: 1px solid #e2e8f0a2;
+    background: #0000001a;
+    box-shadow: 0px 30px 60px rgba(203, 208, 218, 0.541);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1.5rem;
+}
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #101010;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-items {
+    margin-left: 5rem;
+}
+
+.nav-link {
+    font-size: 1.6rem;
+    font-weight: 400;
+    padding: 1.2rem;
+    display: block;
+    color: #000000;
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+    transform: scale(1.1);
+    color: #ffffff;
+}
+
+.nav-logo {
+    font-size: 2.1rem;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.mid {
+    display: flex;
+    flex-direction: column;
+    line-height: 3.5rem;
+    height: 80vh;
+    font-size: 2rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1.2rem 1.2rem;
+}
+
+.mid p {
+    font-weight: 700;
+}
+
+.datainbox {
+    display: grid;
+    grid-gap: 2rem;
+    padding: 3rem;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.datainbox a {
+    color: #ffffff;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border: 2px solid #ffffff;
+    height: 12vh;
+    font-size: large;
+    font-weight: bold;
+}
+
+#box-1:hover {
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.03);
+    color: orange;
+    box-shadow: -3px -3px 6px orange;
+    border: 2px solid orange;
+}
+
+#box-2:hover {
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.03);
+    color: rgb(22, 156, 40);
+    box-shadow: -3px -3px 6px rgb(22, 156, 40);
+    border: 2px solid rgb(22, 156, 40);
+}
+
+#box-3:hover {
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.03);
+    color: rgb(155, 19, 19);
+    box-shadow: -3px -3px 6px rgb(155, 19, 19);
+    border: 2px solid rgb(155, 19, 19);
+}
+
+.g1 {
+    background: rgb(230 212 212);
+    overflow: hidden;
+    margin: 1.2rem 1.2rem;
+    border-radius: .5rem;
+}
+
+.g1 button {
+    margin: 1.2rem 1.2rem;
+    cursor: pointer;
+    border: none;
+    border-radius: .5rem;
+    font-weight: bold;
+    padding: .5rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.g1 button:hover {
+    transform: scale(1.04);
+    background-color: orange;
+}
+
+@media only screen and (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 5rem;
+        height: 38vh;
+        padding: 1.2rem 1.2rem;
+        flex-direction: column;
+        background-color: #000000;
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+    .nav-link {
+        color: #ffffff;
+    }
+    .nav-menu.active {
+        left: 0;
+    }
+    .nav-item {
+        margin: 2.5rem 0;
+    }
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        font-size: smaller;
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .nav-logo {
+        font-size: small;
+    }
+    .mid {
+        font-size: small;
+        height: 40vh;
+        line-height: 2rem;
+        text-align: center;
+    }
+    .datainbox {
+        grid-template-columns: 1fr;
+        /* grid-template-rows: repeat (3, 1fr); */
+    }
+    .box {
+        font-size: small;
+    }
+}
