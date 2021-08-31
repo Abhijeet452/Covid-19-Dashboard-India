@@ -4,25 +4,31 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
     text-transform: capitalize;
-    font-family: 'Julius Sans One', sans-serif;
+    font-family: 'Nixie One', cursive;
+    /* font-family: 'Annie Use Your Telescope', cursive; */
+    /* font-family: 'Julius Sans One', sans-serif; */
     /* font-family: 'Space Mono', monospace; */
 }
 
+body::before {
+    background: url('leohoho-2iisCGzu_mw-unsplash.jpg') no-repeat center center/cover;
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.4;
+}
+
 body {
+    background-color: #000000;
     color: #ffffff;
 }
 
 html {
     font-size: 78.5%;
-}
-
-#video-bg {
-    z-index: -1;
-    position: fixed;
-    top: 0;
-    left: 0;
-    opacity: 0.8;
-    filter: brightness(20%);
 }
 
 li {
@@ -155,12 +161,11 @@ a {
 
 .g1 {
     background: rgb(230 212 212);
-    overflow: hidden;
     margin: 1.2rem 1.2rem;
     border-radius: .5rem;
 }
 
-.g1 button {
+button {
     margin: 1.2rem 1.2rem;
     cursor: pointer;
     border: none;
@@ -170,9 +175,19 @@ a {
     transition: all 0.2s ease-in-out;
 }
 
-.g1 button:hover {
+#graphs1 button:hover {
     transform: scale(1.04);
     background-color: orange;
+}
+
+#graphs2 button:hover {
+    transform: scale(1.04);
+    background-color: green;
+}
+
+#graphs3 button:hover {
+    transform: scale(1.04);
+    background-color: red;
 }
 
 @media only screen and (max-width: 768px) {
