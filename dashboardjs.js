@@ -63,7 +63,7 @@ async function charttotalcases() {
             }]
         },
         options: {
-            responsive: true,
+            responsive: false,
             maintainAspectRatio: true,
             scales: {
                 y: {
@@ -107,7 +107,7 @@ async function chartIt30total() {
         },
         options: {
             maintainAspectRatio: true,
-            responsive: true,
+            responsive: false,
             scales: {
                 y: {
                     beginAtZero: false
@@ -142,7 +142,7 @@ async function charttotalcasesrecoved() {
             }]
         },
         options: {
-            responsive: true,
+            responsive: false,
             maintainAspectRatio: true,
             scales: {
                 y: {
@@ -185,7 +185,7 @@ async function chartIt30totalrecovered() {
         },
         options: {
             maintainAspectRatio: true,
-            responsive: true,
+            responsive: false,
             scales: {
                 y: {
                     beginAtZero: false
@@ -220,7 +220,7 @@ async function charttotalcasesdeceased() {
             }]
         },
         options: {
-            responsive: true,
+            responsive: false,
             maintainAspectRatio: true,
             scales: {
                 y: {
@@ -262,8 +262,8 @@ async function chartIt30totaldeceased() {
             }]
         },
         options: {
+            responsive: false,
             maintainAspectRatio: true,
-            responsive: true,
             scales: {
                 y: {
                     beginAtZero: false
