@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    text-transform: capitalize;
+    text-transform: uppercase;
     font-family: 'Nixie One', cursive;
     /* font-family: 'Annie Use Your Telescope', cursive; */
     /* font-family: 'Julius Sans One', sans-serif; */
@@ -133,12 +133,14 @@ a {
     height: 12vh;
     font-size: large;
     font-weight: bold;
+    border-radius: 0.8rem;
 }
 
 #box-1:hover {
     transition: all 0.2s ease-in-out;
     transform: scale(1.03);
     color: orange;
+    font-weight: bolder;
     box-shadow: -3px -3px 6px orange;
     border: 2px solid orange;
 }
@@ -147,6 +149,7 @@ a {
     transition: all 0.2s ease-in-out;
     transform: scale(1.03);
     color: rgb(22, 156, 40);
+    font-weight: bolder;
     box-shadow: -3px -3px 6px rgb(22, 156, 40);
     border: 2px solid rgb(22, 156, 40);
 }
@@ -155,13 +158,14 @@ a {
     transition: all 0.2s ease-in-out;
     transform: scale(1.03);
     color: rgb(155, 19, 19);
+    font-weight: bolder;
     box-shadow: -3px -3px 6px rgb(155, 19, 19);
     border: 2px solid rgb(155, 19, 19);
 }
 
 .g1 {
     background: rgb(230 212 212);
-    margin: 1.2rem 1.2rem;
+    margin: 1.5rem 1.5rem;
     border-radius: .5rem;
 }
 
@@ -188,6 +192,11 @@ button {
 #graphs3 button:hover {
     transform: scale(1.04);
     background-color: red;
+}
+
+.graphabc {
+    width: 100%;
+    overflow: auto;
 }
 
 @media only screen and (max-width: 768px) {
@@ -243,5 +252,8 @@ button {
     }
     .box {
         font-size: small;
+    }
+    .graphabc canvas {
+        max-height: 50vh;
     }
 }
