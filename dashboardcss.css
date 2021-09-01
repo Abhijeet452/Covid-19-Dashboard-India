@@ -5,6 +5,7 @@
     scroll-behavior: smooth;
     text-transform: uppercase;
     font-family: 'Nixie One', cursive;
+    font-weight: bolder;
     /* font-family: 'Annie Use Your Telescope', cursive; */
     /* font-family: 'Julius Sans One', sans-serif; */
     /* font-family: 'Space Mono', monospace; */
@@ -29,6 +30,15 @@ body {
 
 html {
     font-size: 78.5%;
+}
+
+#preloader {
+    background: #000000 url('https://acegif.com/wp-content/uploads/loading-5.gif') no-repeat center center/cover;
+    background-size: 25%;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
 }
 
 li {
@@ -82,13 +92,14 @@ a {
     font-weight: 400;
     padding: 1.2rem;
     display: block;
-    color: #000000;
+    color: #ffffff;
     transition: all 0.2s ease-in-out;
 }
 
 .nav-link:hover {
     transform: scale(1.1);
-    color: #ffffff;
+    color: #d46374;
+    font-weight: 700;
 }
 
 .nav-logo {
@@ -97,11 +108,62 @@ a {
     color: #ffffff;
 }
 
+.home {
+    text-align: start;
+    font-size: large;
+    line-height: 1.7em;
+}
+
+.home span {
+    font-size: larger;
+}
+
+#btnRegister:hover {
+    background-color: #d46374;
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+.col {
+    width: 40%;
+    filter: invert(32%) sepia(7%) saturate(605%) hue-rotate(314deg) brightness(100%) contrast(88%);
+    opacity: 0.8;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    font-weight: 900;
+    line-height: 2.5em;
+    justify-content: space-around;
+}
+
+.incontent h1 {
+    font-size: 50px;
+    color: #d46374;
+}
+
+#know {
+    margin: 0.3rem 0.3rem;
+    cursor: pointer;
+    border: none;
+    border-radius: .5rem;
+    font-weight: bold;
+    padding: 0.8rem 0.8rem;
+    transition: all 0.2s ease-in-out;
+}
+
+#know:hover {
+    background-color: #d46374;
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
 .mid {
     display: flex;
     flex-direction: column;
     line-height: 3.5rem;
-    height: 80vh;
+    height: 64vh;
     font-size: 2rem;
     justify-content: center;
     align-items: center;
@@ -111,6 +173,7 @@ a {
 
 .mid p {
     font-weight: 700;
+    color: #d46374;
 }
 
 .datainbox {
@@ -137,45 +200,45 @@ a {
 }
 
 #box-1:hover {
-    transition: all 0.2s ease-in-out;
+    transition: all 0.1s ease-in-out;
     transform: scale(1.03);
     color: orange;
     font-weight: bolder;
-    box-shadow: -3px -3px 6px orange;
-    border: 2px solid orange;
+    box-shadow: -3px -3px 6px rgba(255, 166, 0, 0.664);
+    border: 2px solid rgba(255, 166, 0, 0.664);
 }
 
 #box-2:hover {
-    transition: all 0.2s ease-in-out;
+    transition: all 0.1s ease-in-out;
     transform: scale(1.03);
     color: rgb(22, 156, 40);
     font-weight: bolder;
-    box-shadow: -3px -3px 6px rgb(22, 156, 40);
-    border: 2px solid rgb(22, 156, 40);
+    box-shadow: -3px -3px 6px rgb(22, 156, 40, 0.664);
+    border: 2px solid rgb(22, 156, 40, 0.664);
 }
 
 #box-3:hover {
-    transition: all 0.2s ease-in-out;
+    transition: all 0.1s ease-in-out;
     transform: scale(1.03);
     color: rgb(155, 19, 19);
     font-weight: bolder;
-    box-shadow: -3px -3px 6px rgb(155, 19, 19);
-    border: 2px solid rgb(155, 19, 19);
+    box-shadow: -3px -3px 6px rgb(155, 19, 19, 0.664);
+    border: 2px solid rgb(155, 19, 19, 0.664);
 }
 
 .g1 {
-    background: rgb(230 212 212);
+    background: #e09797b7;
     margin: 1.5rem 1.5rem;
     border-radius: .5rem;
 }
 
-button {
-    margin: 1.2rem 1.2rem;
+.btn {
+    margin: 0.3rem 0.3rem;
     cursor: pointer;
     border: none;
     border-radius: .5rem;
     font-weight: bold;
-    padding: .5rem;
+    padding: 1rem 2rem;
     transition: all 0.2s ease-in-out;
 }
 
@@ -240,6 +303,17 @@ button {
     .nav-logo {
         font-size: small;
     }
+    .content {
+        flex-direction: column;
+        text-align: center;
+        line-height: 1.5em;
+    }
+    .incontent span {
+        font-size: 12px;
+    }
+    .incontent h1 {
+        font-size: 20px;
+    }
     .mid {
         font-size: small;
         height: 40vh;
@@ -255,5 +329,10 @@ button {
     }
     .graphabc canvas {
         max-height: 50vh;
+    }
+    .btn {
+        margin: .5rem .5rem;
+        padding: 0.3rem 0.6rem;
+        font-size: smaller;
     }
 }
