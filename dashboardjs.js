@@ -1,3 +1,10 @@
+let loader = document.getElementById("preloader");
+
+
+window.addEventListener("load", function() {
+    loader.style.display = "none";
+})
+
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 
