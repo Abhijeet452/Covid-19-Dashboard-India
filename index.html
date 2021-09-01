@@ -15,8 +15,8 @@
 </head>
 
 <body>
+    <div id="preloader"></div>
     <header class="header">
-
         <nav class="navbar">
             <a href="#" class="nav-logo">Vaccination<span><i class="fas fa-syringe"></i></span></a>
             <ul class="nav-menu">
@@ -43,7 +43,21 @@
     <section class="mid">
         <h1>Covid-19 India Dashboard</h1>
         <p>Are You Vaccinated? If not, please Register yourself for Vaccination</p>
-        <button class="btn">Register</button>
+        <button class="btn" id="btnRegister">Register</button>
+    </section>
+    <section class="home" id="home">
+        <div class="container">
+            <div class="content">
+                <div class="col">
+                    <img src="home.svg" class="" alt="Can't load">
+                </div>
+                <div class="incontent">
+                    <span>Stay Home, Stay Safe</span>
+                    <h1>Protect yourself<br> from covid-19</h1>
+                    <button href="" id="know">Learn More</button>
+                </div>
+            </div>
+        </div>
     </section>
     <section class="datainbox">
         <a href="#graphs1">
@@ -63,50 +77,29 @@
         </a>
     </section>
     <section id="graphs1" class="g1">
-        <button onclick="changetotalgraph()">Total Cases</button>
-        <button onclick="change30graph()">Last 30 Days</button>
+        <button class="btn" onclick="changetotalgraph()">Total Cases</button>
+        <button class="btn" onclick="change30graph()">Last 30 Days</button>
         <div class="graphabc">
             <canvas id="myChart" height="500" width="1480"></canvas>
             <canvas id="Last30Days" height="500" width="1480"></canvas>
         </div>
     </section>
     <section id="graphs2" class="g1">
-        <button onclick="changetotalgraphrecovered()">Total Cases</button>
-        <button onclick="change30graphrecovered()">Last 30 Days</button>
+        <button class="btn" onclick="changetotalgraphrecovered()">Total Cases</button>
+        <button class="btn" onclick="change30graphrecovered()">Last 30 Days</button>
         <div class="graphabc">
             <canvas id="myChartrecovered" height="500" width="1480"></canvas>
             <canvas id="Last30Daysrecovored" height="500" width="1480"></canvas>
         </div>
     </section>
     <section id="graphs3" class="g1">
-        <button onclick="changetotalgraphdeceased()">Total Cases</button>
-        <button onclick="change30graphdeceased()">Last 30 Days</button>
+        <button class="btn" onclick="changetotalgraphdeceased()">Total Cases</button>
+        <button class="btn" onclick="change30graphdeceased()">Last 30 Days</button>
         <div class="graphabc">
             <canvas id="myChartdeceased" height="500" width="1480"></canvas>
             <canvas id="Last30Daysdeceased" height="500" width="1480"></canvas>
         </div>
     </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <script src="prac3.js"></script>
 
 </body>
