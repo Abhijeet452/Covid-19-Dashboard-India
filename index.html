@@ -7,11 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vaccination Dashboard</title>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link rel="stylesheet" href="dashboardcss.css">
+    <link rel="stylesheet" href="prac3css.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nixie+One&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.4.1/dist/chart.min.js" charset="utf-8"></script>
+
 </head>
 
 <body>
@@ -100,8 +101,367 @@
             <canvas id="Last30Daysdeceased" height="500" width="1480"></canvas>
         </div>
     </section>
-    <script src="dashboardjs.js"></script>
+    <!-- <section class="g1 statewisestats">
+        <h3>Statewise data</h3>
+        <div class="div1">
+            <h3 id="state1"></h3>
+            <div class="statestats">
+                <div id="confirmed1">Confirmed: </div>
+                <div id="death1">Deaths: </div>
+                <div id="recovered1">Recovered: </div>
+            </div>
 
+
+        </div>
+        <div class="div1">
+            <h3 id="state2"></h3>
+            <div class="statestats">
+                <div id="confirmed2">Confirmed: </div>
+                <div id="death2">Deaths: </div>
+                <div id="recovered2">Recovered: </div>
+            </div>
+        </div>
+        <div class="div1">
+
+            <h3 id="state3"></h3>
+            <div class="statestats">
+                <div id="confirmed3">Confirmed: </div>
+                <div id="death3">Deaths: </div>
+                <div id="recovered3">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="div1">
+
+            <h3 id="state4"></h3>
+            <div class="statestats">
+                <div id="confirmed4">Confirmed: </div>
+                <div id="death4">Deaths: </div>
+                <div id="recovered4">Recovered: </div>
+            </div>
+        </div>
+        <div class="div1">
+            <h3 id="state5"></h3>
+            <div class="statestats">
+                <div id="confirmed5">Confirmed: </div>
+                <div id="death5">Deaths: </div>
+                <div id="recovered5">Recovered: </div>
+            </div>
+        </div>
+        </div>
+        <div class="div1">
+
+            <h3 id="state6"></h3>
+            <div class="statestats">
+                <div id="confirmed6">Confirmed: </div>
+                <div id="death6">Deaths: </div>
+                <div id="recovered6">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="div1">
+
+            <h3 id="state7"></h3>
+            <div class="statestats">
+                <div id="confirmed7">Confirmed: </div>
+                <div id="death7">Deaths: </div>
+                <div id="recovered7">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="div1">
+
+            <h3 id="state8"></h3>
+
+            <div class="statestats">
+                <div id="confirmed8">Confirmed: </div>
+                <div id="death8">Deaths: </div>
+                <div id="recovered8">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="div1">
+
+            <h3 id="state9"></h3>
+            <div class="statestats">
+                <div id="confirmed9">Confirmed: </div>
+                <div id="death9">Deaths: </div>
+                <div id="recovered9">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="div1">
+
+            <h3 id="state10"></h3>
+            <div class="statestats">
+                <div id="confirmed10">Confirmed: </div>
+                <div id="death10">Deaths: </div>
+                <div id="recovered10">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="div1">
+
+            <h3 id="state11"></h3>
+            <div class="statestats">
+                <div id="confirmed11">Confirmed: </div>
+                <div id="death11">Deaths: </div>
+                <div id="recovered11">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="div1">
+
+            <h3 id="state12"></h3>
+            <div class="statestats">
+                <div id="confirmed12">Confirmed: </div>
+                <div id="death12">Deaths: </div>
+                <div id="recovered12">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="div1">
+
+            <h3 id="state13"></h3>
+            <div class="statestats">
+                <div id="confirmed13">Confirmed: </div>
+                <div id="death13">Deaths: </div>
+                <div id="recovered13">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="div1">
+
+            <h3 id="state14"></h3>
+            <div class="statestats">
+                <div id="confirmed14">Confirmed: </div>
+                <div id="death14">Deaths: </div>
+                <div id="recovered14">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="div1">
+
+            <h3 id="state15"></h3>
+            <div class="statestats">
+                <div id="confirmed15">Confirmed: </div>
+                <div id="death15">Deaths: </div>
+                <div id="recovered15">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="div1">
+
+            <h3 id="state16"></h3>
+            <div class="statestats">
+                <div id="confirmed16">Confirmed: </div>
+                <div id="death16">Deaths: </div>
+                <div id="recovered16">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="div1">
+
+            <h3 id="state17"></h3>
+            <div class="statestats">
+                <div id="confirmed17">Confirmed: </div>
+                <div id="death17">Deaths: </div>
+                <div id="recovered17">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="div1">
+
+            <h3 id="state18"></h3>
+            <div class="statestats">
+                <div id="confirmed18">Confirmed: </div>
+                <div id="death18">Deaths: </div>
+                <div id="recovered18">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="div1">
+
+            <h3 id="state19"></h3>
+            <div class="statestats">
+                <div id="confirmed19">Confirmed: </div>
+                <div id="death19">Deaths: </div>
+                <div id="recovered19">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="div1">
+
+            <h3 id="state20"></h3>
+            <div class="statestats">
+                <div id="confirmed20">Confirmed: </div>
+                <div id="death20">Deaths: </div>
+                <div id="recovered20">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="div1">
+
+            <h3 id="state21"></h3>
+            <div class="statestats">
+                <div id="confirmed21">Confirmed: </div>
+                <div id="death21">Deaths: </div>
+                <div id="recovered21">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="div1">
+
+            <h3 id="state22"></h3>
+            <div class="statestats">
+                <div id="confirmed22">Confirmed: </div>
+                <div id="death22">Deaths: </div>
+                <div id="recovered22">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="div1">
+
+            <h3 id="state23"></h3>
+            <div class="statestats">
+                <div id="confirmed23">Confirmed: </div>
+                <div id="death23">Deaths: </div>
+                <div id="recovered23">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="div1">
+
+            <h3 id="state24"></h3>
+            <div class="statestats">
+                <div id="confirmed24">Confirmed: </div>
+                <div id="death24">Deaths: </div>
+                <div id="recovered24">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="div1">
+
+            <h3 id="state25"></h3>
+            <div class="statestats">
+                <div id="confirmed25">Confirmed: </div>
+                <div id="death25">Deaths: </div>
+                <div id="recovered25">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="div1">
+
+            <h3 id="state26"></h3>
+            <div class="statestats">
+                <div id="confirmed26">Confirmed: </div>
+                <div id="death26">Deaths: </div>
+                <div id="recovered26">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="div1">
+
+            <h3 id="state27"></h3>
+            <div class="statestats">
+                <div id="confirmed27">Confirmed: </div>
+                <div id="death27">Deaths: </div>
+                <div id="recovered27">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="div1">
+
+            <h3 id="state28"></h3>
+            <div class="statestats">
+                <div id="confirmed28">Confirmed: </div>
+                <div id="death28">Deaths: </div>
+                <div id="recovered28">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="div1">
+
+            <h3 id="state29"></h3>
+            <div class="statestats">
+                <div id="confirmed29">Confirmed: </div>
+                <div id="death29">Deaths: </div>
+                <div id="recovered29">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="div1">
+
+            <h3 id="state30"></h3>
+            <div class="statestats">
+                <div id="confirmed30">Confirmed: </div>
+                <div id="death30">Deaths: </div>
+                <div id="recovered30">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="div1">
+
+            <h3 id="state31"></h3>
+            <div class="statestats">
+                <div id="confirmed31">Confirmed: </div>
+                <div id="death31">Deaths: </div>
+                <div id="recovered31">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="div1">
+
+            <h3 id="state32"></h3>
+            <div class="statestats">
+                <div id="confirmed32">Confirmed: </div>
+                <div id="death32">Deaths: </div>
+                <div id="recovered32">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="div1">
+
+            <h3 id="state33"></h3>
+            <div class="statestats">
+                <div id="confirmed33">Confirmed: </div>
+                <div id="death33">Deaths: </div>
+                <div id="recovered33">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="div1">
+
+            <h3 id="state34"></h3>
+            <div class="statestats">
+                <div id="confirmed34">Confirmed: </div>
+                <div id="death34">Deaths: </div>
+                <div id="recovered34">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="div1">
+
+            <h3 id="state35"></h3>
+            <div class="statestats">
+                <div id="confirmed35">Confirmed: </div>
+                <div id="death35">Deaths: </div>
+                <div id="recovered35">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="div1">
+
+            <h3 id="state36"></h3>
+            <div class="statestats">
+                <div id="confirmed36">Confirmed: </div>
+                <div id="death36">Deaths: </div>
+                <div id="recovered36">Recovered: </div>
+            </div>
+        </div>
+
+    </section> -->
+    <script src="prac3.js"></script>
 </body>
 
 </html>
