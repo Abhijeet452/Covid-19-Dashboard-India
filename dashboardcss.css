@@ -11,6 +11,11 @@
     /* font-family: 'Space Mono', monospace; */
 }
 
+html {
+    scrollbar-color: #6969dd #e0e0e0;
+    scrollbar-width: thin;
+}
+
 body::before {
     background: url('leohoho-2iisCGzu_mw-unsplash.jpg') no-repeat center center/cover;
     content: "";
@@ -260,6 +265,44 @@ a {
 .graphabc {
     width: 100%;
     overflow: auto;
+    scrollbar-width: 6px;
+}
+
+.statewisestats {
+    max-height: 80vh;
+    overflow: auto;
+    scrollbar-width: thin;
+}
+
+.statewisestats::-webkit-scrollbar {
+    width: 7px;
+}
+
+.statewisestats::-webkit-scrollbar-track {
+    background-color: rgb(165, 99, 99);
+}
+
+.statewisestats::-webkit-scrollbar-thumb {
+    box-shadow: inset 4px 4px 6px rgba(20, 4, 4, 0.418);
+}
+
+.statestats {
+    display: flex;
+    justify-content: center;
+}
+
+.statestats div {
+    text-align: center;
+    margin: 1.2rem 1.2rem;
+}
+
+.div1 h3 {
+    text-align: center;
+    color: #101010;
+    font-size: 1.8rem;
+    font-weight: bolder;
+    margin: 1.2rem;
+    /* padding: 1rem; */
 }
 
 @media only screen and (max-width: 768px) {
@@ -325,14 +368,24 @@ a {
         /* grid-template-rows: repeat (3, 1fr); */
     }
     .box {
-        font-size: small;
+        font-size: 12px;
     }
     .graphabc canvas {
-        max-height: 50vh;
+        max-height: 69vh;
     }
     .btn {
         margin: .5rem .5rem;
         padding: 0.3rem 0.6rem;
         font-size: smaller;
+    }
+    .div1 h3 {
+        font-size: medium;
+    }
+    .statestats {
+        margin: 0.8rem 0.8rem;
+    }
+    .statestats div {
+        margin: 0.8rem 0.8rem;
+        line-height: 1.6em;
     }
 }
