@@ -1,6 +1,5 @@
 let loader = document.getElementById("preloader");
 
-
 window.addEventListener("load", function() {
     loader.style.display = "none";
 })
@@ -25,33 +24,56 @@ function closeMenu() {
     navMenu.classList.remove("active");
 }
 
-let apiurl = "https://data.covid19india.org/data.json";
-
+var apiURL = 'https://data.covid19india.org/v4/min/timeseries.min.json';
+var data = [];
 async function getData() {
-    let data = [];
-
-    let response = await fetch(apiurl);
+    var response = await fetch(apiURL);
     data = await response.json();
-    console.log(data);
-    document.getElementById('totalC').innerHTML =
-        data.cases_time_series[data.cases_time_series.length - 1].totalconfirmed;
-    document.getElementById('totalR').innerHTML =
-        data.cases_time_series[data.cases_time_series.length - 1].totalrecovered;
-    document.getElementById('totalD').innerHTML =
-        data.cases_time_series[data.cases_time_series.length - 1].totaldeceased;
-    let Xdates = [];
-    let Ynumbers = [];
-    let RecoveredCases = [];
-    let DeceasedCases = [];
-    let len = data.cases_time_series.length;
-    for (let i = 0; i < len; i++) {
-        Xdates.push(data.cases_time_series[i].date);
-        Ynumbers.push(data.cases_time_series[i].dailyconfirmed);
-        RecoveredCases.push(data.cases_time_series[i].dailyrecovered);
-        DeceasedCases.push(data.cases_time_series[i].dailydeceased);
+    // console.log(data);
+    const dates = Object.keys(data.TT.dates);
+    // console.log(dates);
+    let totalcases = [];
+    let totalrecovered = [];
+    let totaldeceased = [];
+    let totaldates = [];
+    let newcases = [];
+    let newrecovered = [];
+    let newdeceased = [];
+    for (let i = 0; i < dates.length; i++) {
+        totalcases.push(data.TT.dates[dates[i]].total.confirmed);
+        totalrecovered.push(data.TT.dates[dates[i]].total.recovered);
+        totaldeceased.push(data.TT.dates[dates[i]].total.deceased);
+        totaldates.push(dates[i]);
     }
-    return { Xdates, Ynumbers, RecoveredCases, DeceasedCases };
+    for (let i = 1; i < dates.length; i++) {
+        newcases.push(Math.abs(totalcases[i] - totalcases[i - 1]));
+        newrecovered.push(Math.abs(totalrecovered[i] - totalrecovered[i - 1]));
+        newdeceased.push(Math.abs(totaldeceased[i] - totaldeceased[i - 1]));
+    }
+    // console.log(newcases);
+    document.getElementById('totalC').innerHTML = data.TT.dates[dates[dates.length - 1]].total.confirmed;
+    document.getElementById('totalR').innerHTML = data.TT.dates[dates[dates.length - 1]].total.recovered;
+    document.getElementById('totalD').innerHTML = data.TT.dates[dates[dates.length - 1]].total.deceased;
+    // console.log(totalcases);
+    // console.log(totalrecovered);
+    // console.log(totaldeceased);
+    // console.log(totaldates);
+    return { totalcases, totalrecovered, totaldeceased, totaldates, newcases, newrecovered, newdeceased }
 }
+// getData();
+// statewise();
+// async function statewise() {
+//     let dat = await getData();
+//     // let statelen = dat.states.length;
+//     for (let i = 0; i < 36; i++) {
+//         document.getElementById('state' + (i + 1)).innerHTML += dat.states[i];
+//         document.getElementById('confirmed' + (i + 1)).innerHTML += dat.statesconfirmed[i];
+//         document.getElementById('death' + (i + 1)).innerHTML += dat.statesdeath[i];
+//         document.getElementById('recovered' + (i + 1)).innerHTML += dat.statesrecovered[i];
+//         console.log('state' + (i + 1));
+//     }
+
+// }
 charttotalcases();
 async function charttotalcases() {
     let ctx = document.getElementById('myChart').getContext('2d');
@@ -60,10 +82,10 @@ async function charttotalcases() {
     const myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: data.Xdates,
+            labels: data.totaldates,
             datasets: [{
                 label: 'Cases/Day',
-                data: data.Ynumbers,
+                data: data.newcases,
                 backgroundColor: 'orange',
                 borderColor: 'orange',
                 borderWidth: 3
@@ -97,8 +119,8 @@ async function chartIt30total() {
     let taarik30 = [];
     let number30 = [];
     for (var i = 0; i < 30; i++) {
-        taarik30.push(data.Xdates[data.Xdates.length - 30 + i]);
-        number30.push(data.Ynumbers[data.Ynumbers.length - 30 + i]);
+        taarik30.push(data.totaldates[data.totaldates.length - 30 + i]);
+        number30.push(data.newcases[data.newcases.length - 30 + i]);
     }
     const myChart = new Chart(ctx, {
         type: 'line',
@@ -139,10 +161,10 @@ async function charttotalcasesrecoved() {
     const myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: data.Xdates,
+            labels: data.totaldates,
             datasets: [{
                 label: 'Recovered Cases/Day',
-                data: data.RecoveredCases,
+                data: data.newrecovered,
                 backgroundColor: 'green',
                 borderColor: 'green',
                 borderWidth: 3
@@ -175,8 +197,8 @@ async function chartIt30totalrecovered() {
     let taarik30 = [];
     let number30 = [];
     for (var i = 0; i < 30; i++) {
-        taarik30.push(data.Xdates[data.Xdates.length - 30 + i]);
-        number30.push(data.RecoveredCases[data.RecoveredCases.length - 30 + i]);
+        taarik30.push(data.totaldates[data.totaldates.length - 30 + i]);
+        number30.push(data.newrecovered[data.newrecovered.length - 30 + i]);
     }
     const myChart = new Chart(ctx, {
         type: 'line',
@@ -217,10 +239,10 @@ async function charttotalcasesdeceased() {
     const myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: data.Xdates,
+            labels: data.totaldates,
             datasets: [{
                 label: 'Deceased Cases/Day',
-                data: data.DeceasedCases,
+                data: data.newdeceased,
                 backgroundColor: 'red',
                 borderColor: 'red',
                 borderWidth: 3
@@ -231,7 +253,7 @@ async function charttotalcasesdeceased() {
             maintainAspectRatio: true,
             scales: {
                 y: {
-                    beginAtZero: true
+                    beginAtZero: true,
                 }
             },
             layout: {
@@ -253,8 +275,8 @@ async function chartIt30totaldeceased() {
     let taarik30 = [];
     let number30 = [];
     for (var i = 0; i < 30; i++) {
-        taarik30.push(data.Xdates[data.Xdates.length - 30 + i]);
-        number30.push(data.DeceasedCases[data.DeceasedCases.length - 30 + i]);
+        taarik30.push(data.totaldates[data.totaldates.length - 30 + i]);
+        number30.push(data.newdeceased[data.newdeceased.length - 30 + i]);
     }
     const myChart = new Chart(ctx, {
         type: 'line',
