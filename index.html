@@ -6,12 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vaccination Dashboard</title>
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="dashboardcss.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nixie+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.4.1/dist/chart.min.js" charset="utf-8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
 </head>
 
@@ -22,7 +25,7 @@
             <a href="#" class="nav-logo">Vaccination<span><i class="fas fa-syringe"></i></span></a>
             <ul class="nav-menu">
                 <li>
-                    <a href="" class="nav-link">Register</a>
+                    <a href="" class="nav-link act">Register</a>
                 </li>
                 <li>
                     <a href="" class="nav-link">Home</a>
@@ -46,7 +49,7 @@
         <p>Are You Vaccinated? If not, please Register yourself for Vaccination</p>
         <button class="btn" id="btnRegister">Register</button>
     </section>
-    <section class="home" id="home">
+    <section class="home" id="home" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="500">
         <div class="container">
             <div class="content">
                 <div class="col">
@@ -60,32 +63,49 @@
             </div>
         </div>
     </section>
+    <section class="home" id="home1" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="500">
+        <div class="container">
+            <div class="content1">
+                <div class="incontent1">
+                    <h1>What is novel<br> Coronavirus?</h1>
+                    <p>Coronavirus disease (COVID-19) is an infectious disease caused by the SARS-CoV-2 virus.</p>
+                    <button href="" id="know1">Know More</button>
+                </div>
+                <div class="col1">
+                    <img src="about_covid.svg" class="" alt="Can't load">
+                </div>
+                
+            </div>
+        </div>
+    </section>
     <section class="datainbox">
         <a href="#graphs1">
-            <div class="box" id="box-1">
+            <div class="box" id="box-1" data-aos="zoom-in" data-aos-duration="500">
                 <span>Total Cases :&nbsp; </span><span id="totalC"></span>
+                <div><span> + &nbsp; </span><span id="+"></span></div>
             </div>
         </a>
         <a href="#graphs2">
-            <div class="box" id="box-2">
+            <div class="box" id="box-2" data-aos="zoom-in" data-aos-duration="500">
                 <span>Total Recovered Cases :&nbsp; </span><span id="totalR"></span>
             </div>
         </a>
         <a href="#graphs3">
-            <div class="box" id="box-3">
+            <div class="box" id="box-3" data-aos="zoom-in" data-aos-duration="500">
                 <span>Total Deceased :&nbsp; </span><span id="totalD"></span>
             </div>
         </a>
     </section>
-    <section id="graphs1" class="g1">
+    <section id="graphs1" class="g1" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="500">
         <button class="btn" onclick="changetotalgraph()">Total Cases</button>
         <button class="btn" onclick="change30graph()">Last 30 Days</button>
         <div class="graphabc">
             <canvas id="myChart" height="500" width="1480"></canvas>
+            <!-- <div id="chart1"></div> -->
             <canvas id="Last30Days" height="500" width="1480"></canvas>
         </div>
     </section>
-    <section id="graphs2" class="g1">
+    <section id="graphs2" class="g1" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="500">
         <button class="btn" onclick="changetotalgraphrecovered()">Total Cases</button>
         <button class="btn" onclick="change30graphrecovered()">Last 30 Days</button>
         <div class="graphabc">
@@ -93,7 +113,7 @@
             <canvas id="Last30Daysrecovored" height="500" width="1480"></canvas>
         </div>
     </section>
-    <section id="graphs3" class="g1">
+    <section id="graphs3" class="g1" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="500">
         <button class="btn" onclick="changetotalgraphdeceased()">Total Cases</button>
         <button class="btn" onclick="change30graphdeceased()">Last 30 Days</button>
         <div class="graphabc">
@@ -101,8 +121,371 @@
             <canvas id="Last30Daysdeceased" height="500" width="1480"></canvas>
         </div>
     </section>
-    
+    <h3 class="vax">Statewise data</h3>
+    <div class="g1 statewisestats" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="500">       
+        <div class="Abhi">
+            <h3 id="state1"></h3>
+            <div class="statestats">
+                <div id="confirmed1" class="cnfs">Confirmed: </div>
+                <div id="death1" class="dnfs">Deaths: </div>
+                <div id="recovered1" class="rnfs">Recovered: </div>
+            </div>
+        </div>
+        <div class="Abhi">
+            <h3 id="state2"></h3>
+            <div class="statestats">
+                <div id="confirmed2" class="cnfs">Confirmed: </div>
+                <div id="death2" class="dnfs">Deaths: </div>
+                <div id="recovered2" class="rnfs">Recovered: </div>
+            </div>
+        </div>
+        <div class="Abhi">
+
+            <h3 id="state3"></h3>
+            <div class="statestats">
+                <div id="confirmed3" class="cnfs">Confirmed: </div>
+                <div id="death3" class="dnfs">Deaths: </div>
+                <div id="recovered3" class="rnfs">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="Abhi">
+
+            <h3 id="state4"></h3>
+            <div class="statestats">
+                <div id="confirmed4" class="cnfs">Confirmed: </div>
+                <div id="death4" class="dnfs">Deaths: </div>
+                <div id="recovered4" class="rnfs">Recovered: </div>
+            </div>
+        </div>
+        <div class="Abhi">
+            <h3 id="state5"></h3>
+            <div class="statestats">
+                <div id="confirmed5" class="cnfs">Confirmed: </div>
+                <div id="death5" class="dnfs">Deaths: </div>
+                <div id="recovered5" class="rnfs">Recovered: </div>
+            </div>
+        </div>
+        <div class="Abhi">
+
+            <h3 id="state6"></h3>
+            <div class="statestats">
+                <div id="confirmed6" class="cnfs">Confirmed: </div>
+                <div id="death6" class="dnfs">Deaths: </div>
+                <div id="recovered6" class="rnfs">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="Abhi">
+
+            <h3 id="state7"></h3>
+            <div class="statestats">
+                <div id="confirmed7" class="cnfs">Confirmed: </div>
+                <div id="death7" class="dnfs">Deaths: </div>
+                <div id="recovered7" class="rnfs">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="Abhi">
+
+            <h3 id="state8"></h3>
+
+            <div class="statestats">
+                <div id="confirmed8" class="cnfs">Confirmed: </div>
+                <div id="death8" class="dnfs">Deaths: </div>
+                <div id="recovered8" class="rnfs">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="Abhi">
+
+            <h3 id="state9"></h3>
+            <div class="statestats">
+                <div id="confirmed9" class="cnfs">Confirmed: </div>
+                <div id="death9" class="dnfs">Deaths: </div>
+                <div id="recovered9" class="rnfs">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="Abhi">
+
+            <h3 id="state10"></h3>
+            <div class="statestats">
+                <div id="confirmed10" class="cnfs">Confirmed: </div>
+                <div id="death10" class="dnfs">Deaths: </div>
+                <div id="recovered10" class="rnfs">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="Abhi">
+
+            <h3 id="state11"></h3>
+            <div class="statestats">
+                <div id="confirmed11" class="cnfs">Confirmed: </div>
+                <div id="death11" class="dnfs">Deaths: </div>
+                <div id="recovered11" class="rnfs">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="Abhi">
+
+            <h3 id="state12"></h3>
+            <div class="statestats">
+                <div id="confirmed12" class="cnfs">Confirmed: </div>
+                <div id="death12" class="dnfs">Deaths: </div>
+                <div id="recovered12" class="rnfs">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="Abhi">
+
+            <h3 id="state13"></h3>
+            <div class="statestats">
+                <div id="confirmed13" class="cnfs">Confirmed: </div>
+                <div id="death13" class="dnfs">Deaths: </div>
+                <div id="recovered13" class="rnfs">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="Abhi">
+
+            <h3 id="state14"></h3>
+            <div class="statestats">
+                <div id="confirmed14" class="cnfs">Confirmed: </div>
+                <div id="death14" class="dnfs">Deaths: </div>
+                <div id="recovered14" class="rnfs">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="Abhi">
+
+            <h3 id="state15"></h3>
+            <div class="statestats">
+                <div id="confirmed15" class="cnfs">Confirmed: </div>
+                <div id="death15" class="dnfs">Deaths: </div>
+                <div id="recovered15" class="rnfs">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="Abhi">
+
+            <h3 id="state16"></h3>
+            <div class="statestats">
+                <div id="confirmed16" class="cnfs">Confirmed: </div>
+                <div id="death16" class="dnfs">Deaths: </div>
+                <div id="recovered16" class="rnfs">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="Abhi">
+
+            <h3 id="state17"></h3>
+            <div class="statestats">
+                <div id="confirmed17" class="cnfs">Confirmed: </div>
+                <div id="death17" class="dnfs">Deaths: </div>
+                <div id="recovered17" class="rnfs">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="Abhi">
+
+            <h3 id="state18"></h3>
+            <div class="statestats">
+                <div id="confirmed18" class="cnfs">Confirmed: </div>
+                <div id="death18" class="dnfs">Deaths: </div>
+                <div id="recovered18" class="rnfs">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="Abhi">
+
+            <h3 id="state19"></h3>
+            <div class="statestats">
+                <div id="confirmed19" class="cnfs">Confirmed: </div>
+                <div id="death19" class="dnfs">Deaths: </div>
+                <div id="recovered19" class="rnfs">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="Abhi">
+
+            <h3 id="state20"></h3>
+            <div class="statestats">
+                <div id="confirmed20" class="cnfs">Confirmed: </div>
+                <div id="death20" class="dnfs">Deaths: </div>
+                <div id="recovered20" class="rnfs">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="Abhi">
+
+            <h3 id="state21"></h3>
+            <div class="statestats">
+                <div id="confirmed21" class="cnfs">Confirmed: </div>
+                <div id="death21" class="dnfs">Deaths: </div>
+                <div id="recovered21" class="rnfs">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="Abhi">
+
+            <h3 id="state22"></h3>
+            <div class="statestats">
+                <div id="confirmed22" class="cnfs">Confirmed: </div>
+                <div id="death22" class="dnfs">Deaths: </div>
+                <div id="recovered22" class="rnfs">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="Abhi">
+
+            <h3 id="state23"></h3>
+            <div class="statestats">
+                <div id="confirmed23" class="cnfs">Confirmed: </div>
+                <div id="death23" class="dnfs">Deaths: </div>
+                <div id="recovered23" class="rnfs">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="Abhi">
+
+            <h3 id="state24"></h3>
+            <div class="statestats">
+                <div id="confirmed24" class="cnfs">Confirmed: </div>
+                <div id="death24" class="dnfs">Deaths: </div>
+                <div id="recovered24" class="rnfs">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="Abhi">
+
+            <h3 id="state25"></h3>
+            <div class="statestats">
+                <div id="confirmed25" class="cnfs">Confirmed: </div>
+                <div id="death25" class="dnfs">Deaths: </div>
+                <div id="recovered25" class="rnfs">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="Abhi">
+
+            <h3 id="state26"></h3>
+            <div class="statestats">
+                <div id="confirmed26" class="cnfs">Confirmed: </div>
+                <div id="death26" class="dnfs">Deaths: </div>
+                <div id="recovered26" class="rnfs">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="Abhi">
+
+            <h3 id="state27"></h3>
+            <div class="statestats">
+                <div id="confirmed27" class="cnfs">Confirmed: </div>
+                <div id="death27" class="dnfs">Deaths: </div>
+                <div id="recovered27" class="rnfs">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="Abhi">
+
+            <h3 id="state28"></h3>
+            <div class="statestats">
+                <div id="confirmed28" class="cnfs">Confirmed: </div>
+                <div id="death28" class="dnfs">Deaths: </div>
+                <div id="recovered28" class="rnfs">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="Abhi">
+
+            <h3 id="state29"></h3>
+            <div class="statestats">
+                <div id="confirmed29" class="cnfs">Confirmed: </div>
+                <div id="death29" class="dnfs">Deaths: </div>
+                <div id="recovered29" class="rnfs">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="Abhi">
+
+            <h3 id="state30"></h3>
+            <div class="statestats">
+                <div id="confirmed30" class="cnfs">Confirmed: </div>
+                <div id="death30" class="dnfs">Deaths: </div>
+                <div id="recovered30" class="rnfs">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="Abhi">
+
+            <h3 id="state31"></h3>
+            <div class="statestats">
+                <div id="confirmed31" class="cnfs">Confirmed: </div>
+                <div id="death31" class="dnfs">Deaths: </div>
+                <div id="recovered31" class="rnfs">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="Abhi">
+
+            <h3 id="state32"></h3>
+            <div class="statestats">
+                <div id="confirmed32" class="cnfs">Confirmed: </div>
+                <div id="death32" class="dnfs">Deaths: </div>
+                <div id="recovered32" class="rnfs">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="Abhi">
+
+            <h3 id="state33"></h3>
+            <div class="statestats">
+                <div id="confirmed33" class="cnfs">Confirmed: </div>
+                <div id="death33" class="dnfs">Deaths: </div>
+                <div id="recovered33" class="rnfs">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="Abhi">
+
+            <h3 id="state34"></h3>
+            <div class="statestats">
+                <div id="confirmed34" class="cnfs">Confirmed: </div>
+                <div id="death34" class="dnfs">Deaths: </div>
+                <div id="recovered34" class="rnfs">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="Abhi">
+
+            <h3 id="state35"></h3>
+            <div class="statestats">
+                <div id="confirmed35" class="cnfs">Confirmed: </div>
+                <div id="death35" class="dnfs">Deaths: </div>
+                <div id="recovered35" class="rnfs">Recovered: </div>
+            </div>
+
+        </div>
+        <div class="Abhi">
+
+            <h3 id="state36"></h3>
+            <div class="statestats">
+                <div id="confirmed36" class="cnfs">Confirmed: </div>
+                <div id="death36" class="dnfs">Deaths: </div>
+                <div id="recovered36" class="rnfs">Recovered: </div>
+            </div>
+        </div>
+    </div>
+    <h2 class="vax">Vaccination graph</h2>
+    <div class="vaccinegraph">
+        <canvas id="TotalVaccinated" height="500" width="1480"></canvas>
+    </div>
     <script src="dashboardjs.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>
