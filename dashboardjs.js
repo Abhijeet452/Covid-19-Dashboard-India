@@ -52,7 +52,7 @@ async function getData() {
     var response = await fetch(apiURL);
     data = await response.json();
     console.log(data);
-    const dates = Object.keys(data.TT.dates);
+    const dates = Object.keys(data.WB.dates);
     const allstates = Object.keys(data);
     allstates.splice(33, 2);
     console.log(allstates);
