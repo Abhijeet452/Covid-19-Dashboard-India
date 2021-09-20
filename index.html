@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nixie+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.4.1/dist/chart.min.js" charset="utf-8"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
@@ -20,7 +21,7 @@
 
 <body>
     <div id="preloader"></div>
-    <header class="header">
+    <header class="header" id="top">
         <nav class="navbar">
             <a href="#" class="nav-logo">Vaccination<span><i class="fas fa-syringe"></i></span></a>
             <ul class="nav-menu">
@@ -74,7 +75,7 @@
                 <div class="col1">
                     <img src="about_covid.svg" class="" alt="Can't load">
                 </div>
-                
+
             </div>
         </div>
     </section>
@@ -122,7 +123,7 @@
         </div>
     </section>
     <h3 class="vax">Statewise data</h3>
-    <div class="g1 statewisestats" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="500">       
+    <div class="g1 statewisestats" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="500">
         <div class="Abhi">
             <h3 id="state1"></h3>
             <div class="statestats">
@@ -478,8 +479,26 @@
         </div>
     </div>
     <h2 class="vax">Vaccination graph</h2>
-    <div class="vaccinegraph">
+    <div class="vaccinegraph" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="500">
         <canvas id="TotalVaccinated" height="500" width="1480"></canvas>
+    </div>
+    <div class="star">
+        <footer>
+            <div class="footlogo">
+                <a href="#top"><span><i class="fas fa-syringe">&nbsp;</i></span>&nbsp;Vaccination&nbsp;</a>
+                <span class="footlogo-span"> &copy;2021 <a href="https://github.com/Abhijeet452"
+                        target="_blank">Abhi452</a></span>
+            </div>
+            <div class="foot-links">
+                <a href="https://www.facebook.com/profile.php?id=100063124114346" class="fa fa-facebook" target="_blank"></a>
+                <a href="https://twitter.com/Abhijee41004779" class="fa fa-twitter" target="_blank"></a>
+                <a href="https://www.instagram.com/yoabhiii/" class="fa fa-instagram" target="_blank"></a>
+                <a href="https://www.linkedin.com/in/abhi-singh-b0ab37215/" class="fa fa-linkedin" target="_blank"></a>
+            </div>
+        </footer>
+        <h3 class="foot-h3">Github:<a href="https://github.com/Abhijeet452" target="_blank">
+                https://github.com/Abhijeet452</a></h3>
+        <h3 class="foot-h3">API Used: data.covid19india.org/data.json</h3>
     </div>
     <script src="dashboardjs.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
